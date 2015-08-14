@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+<div class="container">
+  <div class="row">
+    <h2>Blog Posts</h2>
+    <hr>
+    <section id="pinBoot">
+    {% for entity in entities %}
+      <article class="white-panel"><img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="">
+        <h4>
+            <a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.title }}</a>
+        </h4>
+        <p>{{ entity.body }}</p>
+      </article>
+    {% endfor %}
+    </section>
+    <hr>
+  </div>
+</div>
+
+{% endblock %}

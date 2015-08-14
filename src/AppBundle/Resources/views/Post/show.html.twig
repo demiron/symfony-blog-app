@@ -1,0 +1,37 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+<div class="container">
+    <div class="row">
+             <div class="col-sm-2 paddingTop20">
+            <nav class="nav-sidebar">
+                <ul class="nav">
+                    <li class="active"><a href="javascript:;"><span class="glyphicon glyphicon-star"></span> Blog Category 1</a></li>
+                    <li><a href="javascript:;">Blog Category 2</a></li>
+                    <li><a href="javascript:;">Blog Category 3</a></li>
+                    <li><a href="javascript:;">Blog Category 4</a></li>
+                    <li class="nav-divider"></li>
+                    <li><a href="javascript:;"><i class="glyphicon glyphicon-off"></i> Sign in</a></li>
+                </ul>
+            </nav>
+                      <div><h2 class="add">Advertise!</h2></div>
+        </div>  
+    
+        <div class="col-md-10 blogShort">
+             <h1>{{ entity.title }}</h1>
+             <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=250%C3%97250&w=250&h=250" alt="post img" class="pull-left img-responsive postImg img-thumbnail margin10">
+             <article>
+                <p>
+                    {{ entity.body }}
+                </p>
+                Created_at : {{ entity.createdat|date('Y-m-d H:i:s') }}
+             </article>
+        </div>
+        <a href="{{ path('homepage') }}">
+            Back to the list
+        </a>
+    </div>
+</div>
+
+{% endblock %}
